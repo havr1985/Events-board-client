@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
+import { AddEvent } from "../Modal/AddEvent";
 
 
 type Props = {
@@ -16,8 +17,9 @@ export const CardItem = ({ id, title, description }: Props) => {
           <h2 className=" text-center text-sm font-bold md:text-base xl:text-lg">{title}</h2>
           <p className=" text-xs text-slate-500 md:text-base">{description}</p>
           <div className=" flex justify-between">
-              <Button>Register</Button>
-              <Button><Link to={`/event/${id}`}>View</Link></Button>
+              
+        <Button><Link to={`/event/${id}`}>View</Link></Button>
+        <AddEvent id={id} title={title} />
           </div>
     </div>
   )
