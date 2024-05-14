@@ -1,10 +1,9 @@
-import { CardsList } from "@/components/Cards/CardsList"
-import { Container } from "@/components/Container"
-
+import { CardsList } from "@/components/Cards/CardsList";
+import { Container } from "@/components/Container";
 
 const EventsPage = () => {
   return (
-    <main className=" bg-bg-prim h-full">
+    <main className=" bg-bg-prim h-screen">
       <Container>
         <div className=" w-full">
           <CardsList />
@@ -12,6 +11,6 @@ const EventsPage = () => {
       </Container>
     </main>
   );
-}
+};
 
-export default EventsPage
+export default EventsPage;

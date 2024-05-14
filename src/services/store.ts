@@ -1,7 +1,6 @@
 import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
 import { eventsApi } from "./api/eventsApi";
 
-
 export const store = configureStore({
   reducer: {
     [eventsApi.reducerPath]: eventsApi.reducer,

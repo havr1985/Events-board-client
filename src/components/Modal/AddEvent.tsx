@@ -11,9 +11,11 @@ export const AddEvent = ({ id, title }: Props) => {
   return (
     <Dialog>
       <DialogTrigger>
-        <div>Register</div>
+        <div className=" text-prim-green hover:text-sec-green text-xl font-bold">
+          Register
+        </div>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className=" text-xl">
         {title}
         <AddEventForm id={id} />
       </DialogContent>

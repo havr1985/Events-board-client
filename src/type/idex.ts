@@ -13,4 +13,4 @@ export const AddValSchema = z.object({
   heard: z.string(),
 });
 
-export type AddFields = z.infer<typeof AddValSchema>
+export type AddFields = z.infer<typeof AddValSchema>;

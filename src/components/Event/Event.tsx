@@ -8,15 +8,16 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { AddEvent } from "../Modal/AddEvent";
+import { Loader } from "../Loader";
 
 export const Event = () => {
   const { id } = useParams();
 
-    const { data } = useGetEventByIdQuery({ id });
-    
+  const { data, isLoading } = useGetEventByIdQuery({ id });
 
   return (
     <div className=" p-6 bg-white rounded-xl flex flex-col gap-5">
+      {isLoading && <Loader />}
       <h2 className=" text-center text-3xl font-bold">{data?.result.title}</h2>
       <p className=" text-xl">
         <span className=" text-prim-green">Organizer: </span>
@@ -26,7 +27,7 @@ export const Event = () => {
         <span className=" text-prim-green">Description: </span>
         {data?.result.description}
       </p>
-      <div className=" flex justify-between items-center">
+      <div className=" flex flex-col gap-3 md:flex-row md:justify-between md:items-center">
         <p className=" text-xl font-bold">
           <span className=" text-prim-green">Start: </span>
           {data?.result.date}
@@ -38,7 +39,7 @@ export const Event = () => {
         REGISTERED USER: {data?.subUser.length}
       </div>
       {data?.subUser.length && (
-        <ul className=" flex justify-center flex-wrap gap-x-5">
+        <ul className=" flex justify-center flex-col md:flex-row md:flex-wrap gap-5">
           {data.subUser.map((item) => (
             <Popover key={item._id}>
               <PopoverTrigger>

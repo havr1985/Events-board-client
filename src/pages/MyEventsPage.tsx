@@ -1,38 +1,14 @@
-
-
-import { useIntersectionObserver } from "usehooks-ts";
-
-const Section = (props: { title: string }) => {
-  const { isIntersecting, ref } = useIntersectionObserver({
-    threshold: 0.5,
-  });
-
-  console.log(`Render Section ${props.title}`, {
-    isIntersecting,
-  });
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        border: "1px dashed #000",
-        fontSize: "2rem",
-      }}
-    >
-      <div style={{ margin: "auto" }}>{props.title}</div>
-    </div>
-  );
-};
+import { Container } from "@/components/Container";
+import { MyEventsList } from "@/components/MyEvents/MyEventsList";
 
 export default function MyEventsPage() {
   return (
-    <>
-      {Array.from({ length: 5 }).map((_, index) => (
-        <Section key={index + 1} title={`${index + 1}`} />
-      ))}
-    </>
+    <main className=" bg-bg-prim h-screen">
+      <Container>
+        <div className=" w-full">
+          <MyEventsList />
+        </div>
+      </Container>
+    </main>
   );
 }
-
