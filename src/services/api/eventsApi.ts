@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { TEvent, TReqUser, TResEventById, TResEvents, TSubUser } from "./types";
 
-const BASE_URL = "http://localhost:3001/api";
+const BASE_URL = "https://eventsboard-server.onrender.com/api";
 
 export const eventsApi = createApi({
   reducerPath: "eventsApi",
